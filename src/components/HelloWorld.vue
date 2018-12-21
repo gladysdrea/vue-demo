@@ -90,6 +90,16 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted () {
+    this.getDate()
+  },
+  methods: {
+    getDate () {
+      this.$http.get('/api/').then(res => {
+        console.log(res)
+      })
+    }
   }
 }
 </script>
